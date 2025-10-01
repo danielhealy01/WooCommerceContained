@@ -10,6 +10,9 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress_password
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'https://super-space-spoon-57g4qpj9xr9fv5pg-8080.app.github.dev');
+        define('WP_SITEURL', 'https://super-space-spoon-57g4qpj9xr9fv5pg-8080.app.github.dev');
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
