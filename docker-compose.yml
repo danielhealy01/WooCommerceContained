@@ -13,6 +13,9 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME', 'https://super-space-spoon-57g4qpj9xr9fv5pg-8080.app.github.dev');
         define('WP_SITEURL', 'https://super-space-spoon-57g4qpj9xr9fv5pg-8080.app.github.dev');
+        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+          $_SERVER['HTTPS'] = 'on';
+        }
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
